@@ -1,0 +1,6 @@
+[patti_smith]
+192.168.85.4
+[patti_smith:vars]
+ansible_user=root
+ansible_password=lennon6969
+ansible_python_interpreter=/usr/bin/python3
