@@ -1,0 +1,30 @@
+---
+# defaults file for roles/php
+
+php_packages:
+  - "php74"
+  - "php74-bcmath"
+  - "php74-cli"
+  - "php74-common"
+  - "php74-dba"
+  - "php74-fpm"
+  - "php74-fpm-httpd"
+  - "php74-gd"
+  - "php74-intl"
+  - "php74-json"
+  - "php74-mbstring"
+  - "php74-mysqlnd"
+  - "php74-odbc"
+  - "php74-pdo"
+  - "php74-process"
+  - "php74-snmp"
+  - "php74-soap"
+  - "php74-xml"
+  - "php74-xmlrpc"
+
+php_info: true
+
+adminer:
+  install: true
+  path: "/usr/share/adminer"
+  download: "https://github.com/vrana/adminer/releases/download/v4.6.2/adminer-4.6.2-mysql.php"

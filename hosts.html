@@ -1,0 +1,28 @@
+digraph "boxes" {
+  rankdir=TB;
+
+  "all" [shape=record label=<
+<table border="0" cellborder="0">
+  <tr><td><b>
+  <font face="Times New Roman, Bold" point-size="16">all</font>
+  </b></td></tr>
+</table>
+>]
+  "box" [shape=record style=rounded label=<
+<table border="0" cellborder="0">
+  <tr><td><b>
+  <font face="Times New Roman, Bold" point-size="16">box</font>
+  </b></td></tr>
+<hr/><tr><td><font face="Times New Roman, Bold" point-size="14">ansible_config_file<br/>ansible_connection<br/>ansible_host<br/>ansible_private_key_file<br/>ansible_user<br/>host_key_checking<br/></font></td></tr></table>
+>]
+  "boxes" [shape=record label=<
+<table border="0" cellborder="0">
+  <tr><td><b>
+  <font face="Times New Roman, Bold" point-size="16">boxes</font>
+  </b></td></tr>
+</table>
+>]
+
+  "all" -> "boxes";
+  "boxes" -> "box";
+}

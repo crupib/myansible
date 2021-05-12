@@ -1,0 +1,21 @@
+---
+# defaults file for roles/common
+
+common_packages:
+  - "ntp"
+  - "ntpdate"
+  - "vim-enhanced"
+  - "git"
+  - "unzip"
+  - "policycoreutils-python"
+  - "epel-release"
+  - "https://repo.ius.io/ius-release-el7.rpm"
+  - "http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+ntp_servers:
+  - "0.centos.pool.ntp.org"
+  - "1.centos.pool.ntp.org"
+  - "2.centos.pool.ntp.org"
+  - "3.centos.pool.ntp.org"
+
+users:
+  - { name: "lamp",  group: "lamp", state: "present", key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}" }
