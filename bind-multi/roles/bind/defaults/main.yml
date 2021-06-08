@@ -1,0 +1,30 @@
+---
+# defaults file for bind
+needed_packages:
+  - bind
+  - bind-utils
+acl_trusted:
+  - 192.168.50.8
+  - 192.168.50.9
+  - 192.168.50.10
+listen_on_primary:
+   192.168.50.8
+options_primary:
+   192.168.50.9
+listen_on_slave:
+   192.168.50.9
+zones:
+  - mymac.crupi.net
+type:
+   master
+db_ips:
+   192.168.50
+primary: 
+   mymac.crupi.net
+ptr_records:
+   - ptr: 8
+     host : ns1
+   - ptr: 9
+     host : ns2
+   - ptr: 10
+     host : host1

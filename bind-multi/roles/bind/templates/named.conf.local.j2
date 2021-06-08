@@ -1,0 +1,15 @@
+//
+// named.conf.local
+//
+{% for item in zones %}
+zone {{ item }} {
+    type {{ type }};
+    file /etc/named/zones/db.{{item}};
+{% endfor %}
+};
+{% for item in db_ips %}
+zone {{ item }}.in-addr.arpa {
+    type {{ type }};
+    file /etc/named/zones/db.{{item}};
+{% endfor %}
+};

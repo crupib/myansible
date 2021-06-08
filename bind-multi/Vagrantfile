@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 API_VERSION  = "2"
-DOMAIN       = "nip.io"
+DOMAIN       = "mymac.crupi.net"
 PRIVATE_KEY  = "~/.ssh/id_rsa"
 PUBLIC_KEY   = '~/.ssh/id_rsa.pub'
 CENTOS_IP    = '192.168.50.8'
@@ -18,7 +18,7 @@ Vagrant.configure(API_VERSION) do |config|
       centos.vm.boot_timeout = 2400
       centos.vm.box = CENTOS_BOX
       centos.vm.network "private_network", ip: CENTOS_IP
-      centos.vm.host_name = CENTOS_IP + '.' + DOMAIN
+      centos.vm.host_name = 'ns1' + '.' + DOMAIN
       centos.ssh.insert_key = false
       centos.ssh.private_key_path = [PRIVATE_KEY, "~/.vagrant.d/insecure_private_key"]
       centos.vm.provision "file", source: PUBLIC_KEY, destination: "~/.ssh/authorized_keys"
@@ -41,7 +41,7 @@ Vagrant.configure(API_VERSION) do |config|
       centos2.vm.boot_timeout = 2400
       centos2.vm.box = CENTOS_BOX2
       centos2.vm.network "private_network", ip: CENTOS_IP2
-      centos2.vm.host_name = CENTOS_IP2 + '.' + DOMAIN
+      centos2.vm.host_name = 'ns2' + '.' + DOMAIN
       centos2.ssh.insert_key = false
       centos2.ssh.private_key_path = [PRIVATE_KEY, "~/.vagrant.d/insecure_private_key"]
       centos2.vm.provision "file", source: PUBLIC_KEY, destination: "~/.ssh/authorized_keys"
@@ -64,7 +64,7 @@ config.vm.define "centos3" do |centos3|
       centos3.vm.boot_timeout = 2400
       centos3.vm.box = CENTOS_BOX3
       centos3.vm.network "private_network", ip: CENTOS_IP3
-      centos3.vm.host_name = CENTOS_IP3 + '.' + DOMAIN
+      centos3.vm.host_name = 'host1' + '.' + DOMAIN
       centos3.ssh.insert_key = false
       centos3.ssh.private_key_path = [PRIVATE_KEY, "~/.vagrant.d/insecure_private_key"]
       centos3.vm.provision "file", source: PUBLIC_KEY, destination: "~/.ssh/authorized_keys"

@@ -1,0 +1,35 @@
+---
+- name: Distribution
+  debug: msg="{{ ansible_distribution }}"
+- name: Distribution version
+  debug: msg="{{ ansible_distribution_version}}"
+- name: Distribution major version
+  debug: msg="{{ ansible_distribution_major_version }}"
+- name: install the needed packages for bind.
+  yum:
+    name: "{{ item }}"
+    state: "installed"
+  loop: "{{ needed_packages }}"
+- name: Copy named.conf file
+  template:
+    src: named.conf.j2
+    dest: /tmp/named.conf
+    owner: root
+    mode: 0660
+- name: Creates directory
+  file:
+    path: /tmp/zones
+    state: directory
+- name: add hosts file dbzone
+  template:
+    src: named.conf.local.dbzone.j2
+    dest: /tmp/zones/db.{{primary}}
+    owner: root
+    mode: 0660
+- name: add ptrs file dbzone
+  template:
+    src: named.conf.local.dbptr.j2
+    dest: /tmp/zones/db.{{db_ips}}
+    owner: root
+    mode: 0660
+#notify: restart named

@@ -1,12 +1,21 @@
-centos ansible_host=192.168.50.6.nip.io 
-ubuntu ansible_host=192.168.50.7.nip.io ansible_python_interpreter=/usr/bin/python3
-
-[wordpress]
-centos
-ubuntu
-
-[wordpress:vars]
-ansible_connection=ssh
-ansible_user=vagrant
-ansible_private_key_file=~/.ssh/id_rsa
-host_key_checking=False
+---
+serverlist:
+  hosts:
+    ns1:
+      ansible_host: 192.168.50.8
+      ansible_connection: ssh
+      ansible_user: vagrant
+      ansible_private_key_file: ~/.ssh/id_rsa
+      host_key_checking: false
+    ns2:
+      ansible_host: 192.168.50.9
+      ansible_connection: ssh
+      ansible_user: vagrant
+      ansible_private_key_file: ~/.ssh/id_rsa
+      host_key_checking: false
+    host1:
+      ansible_host: 192.168.50.10
+      ansible_connection: ssh
+      ansible_user: vagrant
+      ansible_private_key_file: ~/.ssh/id_rsa
+      host_key_checking: false

@@ -1,5 +1,0 @@
----
-
-php_fpm_path: "/etc/php-fpm.d/www.conf"
-php_ini_path: /etc/php.ini
-php_service_name: "php-fpm"
