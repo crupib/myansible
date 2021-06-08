@@ -23,8 +23,11 @@ primary:
    mymac.crupi.net
 ptr_records:
    - ptr: 8
-     host : ns1
+     host: ns1
+     domain: mymac.crupi.net
    - ptr: 9
      host : ns2
+     domain: mymac.crupi.net
    - ptr: 10
      host : host1
+     domain: mymac.crupi.net
