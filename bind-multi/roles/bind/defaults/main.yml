@@ -11,6 +11,14 @@ type:
    master
 zones: 
   - mymac.crupi.net
+db_ips:
+   - 192.168.50
+primary: 
+    dom : mymac.crupi.net
+    ip:   192.168.50.8
+secondary: 
+    dom : mymac.crupi.net
+    ip:   192.168.50.9
 A_rec:
   - arec: ns1
     dom:  mymac.crupi.net
@@ -21,14 +29,6 @@ A_rec:
   - arec: host1
     dom:  mymac.crupi.net
     ip:   192.168.50.10
-db_ips:
-   - 192.168.50
-primary: 
-    dom : mymac.crupi.net
-    ip:   192.168.50.8
-secondary: 
-    dom : mymac.crupi.net
-    ip:   192.168.50.9
 ptr_records:
    - ptr: 8
      host: ns1
