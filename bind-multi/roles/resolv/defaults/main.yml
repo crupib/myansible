@@ -1,0 +1,10 @@
+---
+# defaults file for resolv
+needed_packages:
+  - bind-utils
+primary:
+  dom : mymac.crupi.net
+  ip  : 192.168.50.8
+secondary:
+  dom : mymac.crupi.net
+  ip:   192.168.50.9

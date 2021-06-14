@@ -7,20 +7,28 @@ acl_trusted:
   - 192.168.50.8
   - 192.168.50.9
   - 192.168.50.10
-listen_on_primary:
-   192.168.50.8
-options_primary:
-   192.168.50.9
-listen_on_slave:
-   192.168.50.9
-zones:
-  - mymac.crupi.net
 type:
    master
+zones: 
+  - mymac.crupi.net
+A_rec:
+  - arec: ns1
+    dom:  mymac.crupi.net
+    ip:   192.168.50.8
+  - arec: ns2
+    dom:  mymac.crupi.net
+    ip:   192.168.50.9
+  - arec: host1
+    dom:  mymac.crupi.net
+    ip:   192.168.50.10
 db_ips:
-   192.168.50
+   - 192.168.50
 primary: 
-   mymac.crupi.net
+    dom : mymac.crupi.net
+    ip:   192.168.50.8
+secondary: 
+    dom : mymac.crupi.net
+    ip:   192.168.50.9
 ptr_records:
    - ptr: 8
      host: ns1

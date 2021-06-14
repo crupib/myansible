@@ -16,6 +16,12 @@
     dest: /tmp/named.conf
     owner: root
     mode: 0660
+- name: Copy named.conf.local file
+  template:
+    src: named.conf.local.j2
+    dest: /tmp/named.conf.local
+    owner: root
+    mode: 0660
 - name: Creates directory
   file:
     path: /tmp/zones
@@ -23,13 +29,12 @@
 - name: add hosts file dbzone
   template:
     src: named.conf.local.dbzone.j2
-    dest: /tmp/zones/db.{{primary}}
+    dest: /tmp/zones/db.{{ primary['dom'] }}
     owner: root
     mode: 0660
-- name: add ptrs file dbzone
+- name: add ptrs file dbptrs
   template:
     src: named.conf.local.dbptr.j2
-    dest: /tmp/zones/db.{{db_ips}}
+    dest: /tmp/zones/db.{{ primary['ip'] }}
     owner: root
     mode: 0660
-#notify: restart named

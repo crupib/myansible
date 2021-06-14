@@ -1,0 +1,6 @@
+# ansible role resolve.conf
+search ntsdev.net {{ primary['dom'] }}
+nameserver {{  primary['ip'] }}
+nameserver {{  secondary['ip'] }}
+nameserver 8.8.8.8
+nameserver 8.8.4.4

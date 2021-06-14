@@ -1,12 +1,7 @@
 ---
-
-- hosts: ns1
+- hosts: host1, ns1, ns2
   gather_facts: true
   become: yes
   become_method: sudo
-
-  vars_files:
-    - group_vars/bind_needed.yml
-
   roles:
-    - roles/bind
+    - roles/resolv
