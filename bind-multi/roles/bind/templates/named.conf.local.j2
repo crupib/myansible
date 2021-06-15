@@ -3,13 +3,13 @@
 //
 {% for item in zones %}
 zone {{ item }} {
-    type {{ type }};
+    type {{ type['primary'] }};
     file /etc/named/zones/db.{{item}};
 {% endfor %}
 };
 {% for item in db_ips %}
 zone {{ item }}.in-addr.arpa {
-    type {{ type }};
+    type {{ type['primary'] }};
     file /etc/named/zones/db.{{item}};
 {% endfor %}
 };

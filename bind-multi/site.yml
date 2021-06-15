@@ -1,7 +1,7 @@
 ---
-- hosts: host1, ns1, ns2
+- hosts: ns1
   gather_facts: true
   become: yes
   become_method: sudo
   roles:
-    - roles/resolv
+    - roles/bind

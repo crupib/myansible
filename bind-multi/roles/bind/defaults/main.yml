@@ -8,7 +8,8 @@ acl_trusted:
   - 192.168.50.9
   - 192.168.50.10
 type:
-   master
+   primary: master
+   secondary: slave
 zones: 
   - mymac.crupi.net
 db_ips:
