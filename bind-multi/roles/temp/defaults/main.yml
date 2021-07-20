@@ -7,6 +7,9 @@ acl_trusted:
   - 192.168.50.8
   - 192.168.50.9
   - 192.168.50.10
+  - 192.168.55.8
+  - 192.168.55.9
+  - 192.168.55.10
 zones: 
   - zone1: primary
     dom: mymac.crupi.net
@@ -19,9 +22,6 @@ zones:
 primary: 
     dom : mymac.crupi.net
     ip:   192.168.50.8
-dbipzone:
-    dom : mymac.crupi.net
-    subnet: 192.168.50
 secondary: 
     dom : mymac.crupi.net
     ip:   192.168.50.9
@@ -35,6 +35,15 @@ A_rec:
   - arec: host1
     dom:  mymac.crupi.net
     ip:   192.168.50.10
+  - arec: host2
+    dom:  mymac.beatles.net
+    ip:   192.168.55.8
+  - arec: host2
+    dom:  mymac.beatles.net
+    ip:   192.168.55.9
+  - arec: host3
+    dom:  mymac.beatles.net
+    ip:   192.168.55.10
 ptr_records:
    - ptr: 8
      host: ns1
@@ -45,3 +54,9 @@ ptr_records:
    - ptr: 10
      host : host1
      domain: mymac.crupi.net
+   - ptr: 9
+     host : host2
+     domain: mymac.beatles.net
+   - ptr: 10
+     host : host3
+     domain: mymac.beatles.net
