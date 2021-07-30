@@ -31,12 +31,14 @@
 - name: add hosts file dbzone
   template:
     src: named.conf.local.dbzone.j2
-    dest: /tmp/zones/db.{{ dbipzone['dom'] }}
+    dest: /tmp/zones/db.{{ item.dom }}
     owner: root
     mode: 0755
+  loop: "{{ zones }}"
 - name: add ptrs file dbptrs
   template:
     src: named.conf.local.dbptr.j2
-    dest: /tmp/zones/db.{{ dbipzone['subnet'] }}
+    dest: /tmp/zones/db.{{ item.subnet }}
     owner: root
     mode: 0755
+  loop: "{{ zones }}"

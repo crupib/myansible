@@ -7,15 +7,18 @@ serverlist:
       ansible_user: vagrant
       ansible_private_key_file: ~/.ssh/id_rsa
       host_key_checking: false
+      ansible_python_interpreter: /bin/python
     ns2:
       ansible_host: 192.168.50.9
       ansible_connection: ssh
       ansible_user: vagrant
       ansible_private_key_file: ~/.ssh/id_rsa
       host_key_checking: false
+      ansible_python_interpreter: /bin/python
     host1:
       ansible_host: 192.168.50.10
       ansible_connection: ssh
       ansible_user: vagrant
       ansible_private_key_file: ~/.ssh/id_rsa
       host_key_checking: false
+      ansible_python_interpreter: /bin/python

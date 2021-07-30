@@ -11,5 +11,7 @@ $TTL    604800
 
 ; PTR Records
 {% for x in ptr_records %}
+{% if x.domain == item.dom %}
 {{x.ptr}}  IN    PTR {{x.host}}.{{x.domain}}.    
+{% endif %}
 {% endfor %}

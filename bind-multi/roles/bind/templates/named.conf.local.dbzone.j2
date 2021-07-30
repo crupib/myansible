@@ -11,6 +11,8 @@ $TTL    604800
      IN      NS      ns2.{{secondary['dom']}}.
 
 ; name servers - A records
-{% for x in A_rec %}
-{{x.arec}}.{{x.dom}}.      IN      A       {{x.ip}} 
+{% for x in A_rec  %}
+{% if x.dom == item.dom %}
+   {{x.arec}}.{{x.dom}}.      IN      A       {{x.ip}} 
+{% endif %}
 {% endfor %}
