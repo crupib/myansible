@@ -1,0 +1,10 @@
+---
+- hosts: wordpress
+  gather_facts: true
+  tasks:
+  - name: Print all available facts
+    ansible.builtin.setup:
+      gather_subset:
+        - 'all'
+#    register: myfact
+  - debug: msg="{{ ansible_distribution_release }}"

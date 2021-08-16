@@ -7,6 +7,7 @@
 - name: include the operating system specific variables
   include_vars: "{{ ansible_os_family }}.yml"
 
+##################################################################################################
 # Create the user
 ##################################################################################################
 
@@ -28,7 +29,14 @@
     comment: "{{ wordpress_system.comment }}"
     home: "{{ wordpress_system.home }}"
     state: "{{ wordpress_system.state }}"
-
+################################################################################################
+# stop apache2 from interfering with nginx
+##################################################################################################
+- name: remove apache2
+  package:
+    name: apache2
+    state: absent
+################################################################################################
 # Deploy the NGINX config files
 ##################################################################################################
 
@@ -89,7 +97,7 @@
     name: "{{ php_service_name }}"
     state: "started"
 
-- name: start nginx
+- name: start nginx - 0001
   service:
     name: "nginx"
     state: "started"

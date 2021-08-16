@@ -2,7 +2,8 @@
 
 # Enabled the repos needed to install our software stack
 ##################################################################################################
-
+- debug:
+    msg: "**** In install-centos.yml 6969 *****"
 - name: install the repo packages
   yum:
     name: "{{ item }}"

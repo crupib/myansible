@@ -8,7 +8,7 @@ PUBLIC_KEY   = '~/.ssh/id_rsa.pub'
 CENTOS_IP    = '192.168.50.6'
 CENTOS_BOX   = 'centos/7'
 UBUNTU_IP    = '192.168.50.7'
-UBUNTU_BOX   = 'generic/ubuntu1704'
+UBUNTU_BOX   = 'bento/ubuntu-18.04'
 
 Vagrant.configure(API_VERSION) do |config|
 

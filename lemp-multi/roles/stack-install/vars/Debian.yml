@@ -4,7 +4,8 @@
 ##################################################################################################
 
 repo_packages:
-  - "deb [arch=amd64,i386] http://mirror.sax.uk.as61049.net/mariadb/repo/10.1/ubuntu {{ ansible_distribution_release }} main"
+#  - "deb [arch=amd64,i386] http://mirror.sax.uk.as61049.net/mariadb/repo/10.1/ubuntu {{ ansible_distribution_release }} main"
+  - "deb [arch=amd64,i386] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu  {{ ansible_distribution_release }} main"
   - "deb http://nginx.org/packages/mainline/ubuntu/ {{ ansible_distribution_release }} nginx"
   - "deb-src http://nginx.org/packages/mainline/ubuntu/ {{ ansible_distribution_release }} nginx"
 
@@ -19,22 +20,22 @@ repo_keys_url:
 
 system_packages:
   - "software-properties-common"
-  - "python3-mysqldb"
   - "acl"
+  - "python-mysqldb"
 
 stack_packages:
   - "nginx"
   - "mariadb-server"
-  - "php7.0"
-  - "php7.0-cli"
-  - "php7.0-fpm"
-  - "php7.0-gd"
-  - "php7.0-json"
-  - "php7.0-mbstring"
-  - "php7.0-mysqlnd"
-  - "php7.0-soap"
-  - "php7.0-xml"
-  - "php7.0-xmlrpc"
+  - "php"
+  - "php-cli"
+  - "php-fpm"
+  - "php-gd"
+  - "php-json"
+  - "php-mbstring"
+  - "php-mysqlnd"
+  - "php-soap"
+  - "php-xml"
+  - "php-xmlrpc"
 
 extra_packages:
   - "vim"

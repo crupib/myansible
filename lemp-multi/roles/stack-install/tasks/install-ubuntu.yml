@@ -2,6 +2,8 @@
 
 # Enabled the repos needed to install our software stack
 ##################################################################################################
+- debug:
+    msg: "**** In install-ubuntu.yml  6969 *****"
 
 - name: update cache and install the system packages
   apt:
@@ -25,7 +27,6 @@
   apt_repository:
     repo: "{{ item }}"
     state: "present"
-    update_cache: "yes"
   loop: "{{ repo_packages }}"
 
 # Install the packages we require for our stack
@@ -34,5 +35,5 @@
 - name: install the stack packages
   apt:
     name: "{{ item }}"
-    state: "installed"
+    state: "latest"
   loop: "{{ stack_packages + extra_packages }}"

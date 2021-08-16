@@ -22,11 +22,12 @@ packages_remove:
   - "mariadb-libs.x86_64"
 
 system_packages:
-  - "mariadb101u"
-  - "mariadb101u-server"
-  - "mariadb101u-config"
-  - "mariadb101u-common"
-  - "mariadb101u-libs"
+  - "mariadb102"
+  - "mariadb102-server"
+#  - "mariadb102-config"
+  - "mariadb102-server-galera.x86_64"
+  - "mariadb102-common"
+  - "mariadb102-libs"
   - "postfix"
   - "MySQL-python"
   - "policycoreutils-python"
