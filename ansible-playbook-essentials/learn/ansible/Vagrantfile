@@ -25,6 +25,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "lb" do |lb|
     lb.vm.network :private_network, ip: "192.168.61.13"
   end
-
 end
-

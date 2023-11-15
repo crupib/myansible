@@ -1,0 +1,14 @@
+---
+- name: shell Sample
+  hosts: www
+  remote_user: vagrant
+  become: true
+  tasks:
+    - name: run script sourced from from a system path on target host
+      script: /usr/local/bin/backup.sh
+      register: scriptkiddies
+    - debug: msg="{{ scriptkiddies }}"
+    - name: run script sourced from inside a role
+      script: backup.sh
+      register: scriptkiddies2
+    - debug: msg="{{ scriptkiddies }}"

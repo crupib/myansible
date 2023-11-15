@@ -1,0 +1,12 @@
+---
+- name: command Sample
+  hosts: all
+  remote_user: vagrant
+  become: true
+  tasks:
+    - name: running a command
+      command: ls -ltr
+      args:
+        chdir: /etc
+      register: command
+    - debug: msg="{{ command }}"

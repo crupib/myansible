@@ -1,0 +1,12 @@
+---
+- name: shell Sample
+  hosts: all
+  remote_user: vagrant
+  become: true
+  tasks:
+    - name: running a shell command
+      shell: ls -ltr | grep host >> /tmp/hostconfigs
+      args:
+        chdir: /etc
+      register: command
+    - debug: msg="{{ command }}"

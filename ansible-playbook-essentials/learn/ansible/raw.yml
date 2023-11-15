@@ -1,0 +1,10 @@
+---
+- name: Hello World Sample
+  hosts: all
+  remote_user: vagrant
+  become: true
+  tasks:
+    - name: running a raw command
+      raw: uptime
+      register: uptime
+    - debug: msg="{{ uptime }}"
