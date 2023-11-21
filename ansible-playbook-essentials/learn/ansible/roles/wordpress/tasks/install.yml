@@ -11,6 +11,18 @@
      chdir: "{{ wp_srcdir }}"
      creates: "{{ wp_srcdir }}/latest.tar.gz"
   register: wp_download
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: "{{ wp_srcdir }}"
+    owner: nginx
+    group: nginx
+    mode: '0777'
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: "{{ wp_srcdir }}/latest.tar.gz"
+    owner: nginx
+    group: nginx
+    mode: '0644'
 - name: extract wordpress
   shell: "tar xzf latest.tar.gz && mv wordpress \
   {{ wp_docroot }}/{{ wp_sitedir }}"
