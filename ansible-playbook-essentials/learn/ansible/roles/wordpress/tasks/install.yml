@@ -23,10 +23,14 @@
     owner: nginx
     group: nginx
     mode: '0644'
+- name: Delete existing wordpress folder
+  file:
+    path: "{{ wp_docroot }}/{{ wp_sitedir }}/wordpress"
+    state: absent
 - name: extract wordpress
   shell: "tar xzf latest.tar.gz && mv wordpress \
   {{ wp_docroot }}/{{ wp_sitedir }}"
   args:
      chdir: "{{ wp_srcdir }}"
-     creates: "{{ wp_docroot }}"
+  register: extract_wordpress
   when: wp_download.rc == 0
