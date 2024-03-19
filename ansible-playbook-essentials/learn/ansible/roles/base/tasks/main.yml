@@ -6,7 +6,7 @@
    user: name=devops comment="Devops User" uid=2001 group=devops
  - name: install htop package
    action: apt name=htop state=present update_cache=yes
- - name: creating nginx group 
-   group: name=nginx state=present
- - name: create nginx user with admin previleges
-   user: name=nginx comment="nginx User" uid=2003 group=nginx
+# - name: creating nginx group 
+#   group: name=nginx state=present
+# - name: create nginx user with admin previleges
+#   user: name=nginx comment="nginx User" uid=2003 group=nginx

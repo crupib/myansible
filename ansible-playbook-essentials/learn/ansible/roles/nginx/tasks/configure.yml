@@ -5,4 +5,3 @@
     - restart nginx service
  - name: create home page for default site
    copy: src=index.html dest=/usr/share/nginx/html/index.html
-

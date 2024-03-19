@@ -1,12 +1,14 @@
 ---
 - hosts: www
   remote_user: vagrant
-  become: yes
+  become: true
   pre_tasks:
-     - shell: echo 'I":" Beginning to configure web server..'
+    - shell: echo 'I":" Beginning to configure web server...'
+      register: foo
+    - debug: msg="{{ foo.stdout }}"
   roles:
-     - nginx
-     - wordpress
+  - nginx
   post_tasks:
-     - shell: echo 'I":" Done configuring nginx web server...'
-
+    - shell: echo 'I":" Done conifiguring nginx web server...'
+      register: bar
+    - debug: msg="{{ bar.stdout }}"
